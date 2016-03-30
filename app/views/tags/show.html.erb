@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tag.name %>
-</p>
+
+<div class="panel panel-default">
+  <div class="panel-heading"> <%= @tag.name %></div>
+  <!-- ul-listgroup here -->
+</div>
 
 <%= edit_and_destroy_buttons(@tag) %>
 
-<%= link_to 'Back', tags_path %>

@@ -6,14 +6,12 @@
 </p>
 
 <p>
-  <%= @post.category %>
+  <%= @post.category.name %>
 </p>
 
 <p>
   <%= @post.body %>
 </p>
 
+<%= edit_and_destroy_buttons(@post) %>
 
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

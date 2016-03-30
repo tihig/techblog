@@ -1,10 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tag.name %>
-</p>
 
-<%= edit_and_destroy_buttons(@beer) %>
+<div class="panel panel-default">
+  <div class="panel-heading"> <%= @tag.name %></div>
+  <ul class="list-group">
+  <% @tag.posts.each do |post| %>
+    <li class="list-group-item"><%= post.title %></li>
+     <% end %>
+  </ul>
+</div>
 
-<%= link_to 'Back', tags_path %>
+<%= edit_and_destroy_buttons(@tag) %>
+

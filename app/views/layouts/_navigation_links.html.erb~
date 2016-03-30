@@ -1,0 +1,10 @@
+<li><%= link_to 'posts', posts_path %></li>
+<li><%= link_to 'categories', categories_path %></li>
+<li><%= link_to 'tags', tags_path %></li>
+
+<% if not current_user.nil? %>
+<li><%= link_to 'signout', signout_path %></li>
+<% else %>
+<li><%= link_to 'signin', signin_path %></li>
+<li><%= link_to 'signup', signup_path %></li>
+<% end %>

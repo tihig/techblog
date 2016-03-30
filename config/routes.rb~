@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :tagships
+  resources :tags
   resources :posts
   resources :categories
+  resource :session, only: [:new, :create, :destroy]
  
-root 'posts#index'
+  root 'posts#index'
+  get 'signup', to: 'users#new'
 end
