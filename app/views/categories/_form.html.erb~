@@ -16,8 +16,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.label :descritpion %><br>
+    <%= f.text_field :descritpion %>
   </div>
   <div class="actions">
     <%= f.submit %>

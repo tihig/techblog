@@ -1,2 +1,5 @@
 class Post < ActiveRecord::Base
+  belongs_to :category
+  has_many :tagships
+  has_many :tags, through :tagships, source: :tag
 end
