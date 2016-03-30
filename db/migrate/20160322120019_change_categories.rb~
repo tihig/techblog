@@ -1,4 +1,0 @@
-class ChangeCategories < ActiveRecord::Migration
-  def change
-  end
-end
