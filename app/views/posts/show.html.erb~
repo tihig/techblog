@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h1>
   <%= @post.title %>
-</p>
+</h1>
 
 <p>
   <%= @post.category.name %>
@@ -12,6 +11,8 @@
 <p>
   <%= @post.body %>
 </p>
+
+<!-- favorite-button -->
 
 <%= edit_and_destroy_buttons(@post) %>
 

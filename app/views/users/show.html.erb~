@@ -5,5 +5,5 @@
 </div>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= edit_and_destroy_buttons(@user) %>
 <%= link_to 'Back', users_path %>
