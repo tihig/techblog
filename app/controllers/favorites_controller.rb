@@ -15,6 +15,7 @@ class FavoritesController < ApplicationController
   # GET /favorites/new
   def new
     @favorite = Favorite.new
+    @posts = Post.all.reject{ |post| current_user.in? post.favorite }
   end
 
   # GET /favorites/1/edit
