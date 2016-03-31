@@ -4,6 +4,8 @@
   <%= @post.title %>
 </h1>
 
+
+
 <p>
   <%= @post.category.name %>
 </p>
@@ -12,7 +14,14 @@
   <%= @post.body %>
 </p>
 
-<%= favorite_button(@post) %>
 
-<%= edit_and_destroy_buttons(@post) %>
-
+<div class="btn-toolbar" role="toolbar" aria-label="...">
+  <div class="btn-group" role="group" aria-label="...">
+  <% if current_user %>    
+   <button type="button" class="btn btn-default btn-sm">
+       <span class="glyphicon glyphicon-star" aria-hidden="true"></span><%= favorite_button(@post) %>
+    </button>
+<% end %>
+    <%= edit_and_destroy_buttons(@post) %>
+  </div>
+</div>
