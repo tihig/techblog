@@ -10,7 +10,6 @@ module ApplicationHelper
   end
 
  def favorite_button(post)
-    byebug
    if not current_user.in? @favorite.users
      form_for(@favorite) do |f| 
      f.hidden_field :post_id

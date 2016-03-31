@@ -12,17 +12,16 @@ module ApplicationHelper
  def favorite_button(post)
     byebug
    if not current_user.in? @favorite.users
-
-   form_for(@favorite) do |f| 
+     form_for(@favorite) do |f| 
      f.hidden_field :post_id
      f.submit value:"Add to Favorites"
      end
-    end
+   end
    if current_user.in? @favorite.users
-    form_for(@favorite, method: "delete") do |f|
+     form_for(@favorite, method: "delete") do |f|
       f.hidden_field :post_id
       f.submit value: "unfavorite"
      end
-    end
-  end
+   end
+ end
 end
