@@ -1,8 +1,14 @@
 class User < ActiveRecord::Base
-  has_secure_password
-
  
   validates :username, uniqueness: true,
-                       length: { minimum: 3 }
+                       length: { minimum: 3, maximum: 15 }
+
+  validates :password, length: { minimum: 4 },
+                       format: {
+                          with: /\d.*[A-Z]|[A-Z].*\d/,
+                          message: "has to contain one number and one upper case letter"}
+
   has_many :favorite_posts, through: :favorites, source: :post
+
+  has_secure_password
 end

@@ -5,8 +5,9 @@
    <p class="lead blog-description">Posts about technology and it-related news, trends etc.</p>
 </div>
 
-<ul class="pager"><li><%= link_to 'New Post', new_post_path %></li></ul>
-
+<% if current_user.admin? %>
+  <%= link_to 'New Post', new_post_path, "btn btn-default" %>
+<% end %>
 
 <div class="col-sm-8 blog-main">
 

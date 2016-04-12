@@ -14,14 +14,26 @@
   <%= @post.body %>
 </p>
 
+<% if current_user.admin %>
+  <%  if not @post.id? @tag.members%>
+
+  <%= form_for(@membership) do |f| %>
+    <%= f.hidden_field :beer_club_id %>
+    <%= f.submit value:"join the club" %>
+  <% end %>
+
+  <% end %>
+
+   <%  if current_user.in? @beer_club.members%>
+    <%= form_for(@membership, method: "delete") do |f| %>
+      <%= f.hidden_field :beer_club_id %>
+      <%= f.submit value: "end the membership" %>
+   <% end %>
+  <% end %>
 
 <div class="btn-toolbar" role="toolbar" aria-label="...">
   <div class="btn-group" role="group" aria-label="...">
-  <% if current_user %>    
-   <button type="button" class="btn btn-default btn-sm">
-       <span class="glyphicon glyphicon-star" aria-hidden="true"></span><%= favorite_button(@post) %>
-    </button>
-<% end %>
+    <!-- favorite-button -->
     <%= edit_and_destroy_buttons(@post) %>
   </div>
 </div>
