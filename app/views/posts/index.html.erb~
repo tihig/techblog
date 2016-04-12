@@ -5,8 +5,8 @@
    <p class="lead blog-description">Posts about technology and it-related news, trends etc.</p>
 </div>
 
-<% if current_user.admin? %>
-  <%= link_to 'New Post', new_post_path, "btn btn-default" %>
+<% if current_user.admin and not current_user.nil %>
+  <%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
 <% end %>
 
 <div class="col-sm-8 blog-main">
