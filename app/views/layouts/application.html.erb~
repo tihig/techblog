@@ -13,13 +13,27 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
-     <%= render 'layouts/messages' %>
+     <div class="container" >
+      <%= render 'layouts/messages' %>
 
       <div class="row">
+        <div class="col-md-2">
+          
+        </div>
         <div class="col-md-8">
           <%= yield %>
         </div>
+        <div class="col-md-2">
+          
+        </div>
       </div>
+
+     </div>
+     <nav>
+     </nav>
+     <footer class="blog-footer">
+	<p> @tihig 2016 </p>
+     </footer>
     </main>
   </body>
 </html>

@@ -3,7 +3,7 @@ $light-orange: #ff8c00;
 $navbar-default-color: $light-orange;
 
 .blog-footer {
-    position: bottom;
+    position: absolute;
     background-color: #f9f9f9;
     border-top: 1px solid #e5e5e5;
     color: #999;
