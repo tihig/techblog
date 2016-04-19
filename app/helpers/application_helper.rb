@@ -22,17 +22,7 @@ module ApplicationHelper
   end
 
  def favorite_button(post)
-   if not current_user.in? @favorite.users
-     form_for(@favorite) do |f| 
-     f.hidden_field :post_id
-     f.submit value:"Add to Favorites"
-     end
-   end
-   if current_user.in? @favorite.users
-     form_for(@favorite, method: "delete") do |f|
-      f.hidden_field :post_id
-      f.submit value: "unfavorite"
-     end
-   end
+
+     #favorite = button_to("Favorite", url_for([:create_favorite, post.id, current_user.id]), class: "favorite-btn btn btn-default")
  end
 end

@@ -14,6 +14,7 @@ module ApplicationHelper
   def new_buttons(item)
   unless current_user.nil?
     if current_user.admin?
+      byebug
       new = link_to('New', url_for([:new, item]), class:"btn btn-default")
       raw("#{new}")
     end
@@ -21,17 +22,8 @@ module ApplicationHelper
   end
 
  def favorite_button(post)
-   if not current_user.in? @favorite.users
-     form_for(@favorite) do |f| 
-     f.hidden_field :post_id
-     f.submit value:"Add to Favorites"
-     end
-   end
-   if current_user.in? @favorite.users
-     form_for(@favorite, method: "delete") do |f|
-      f.hidden_field :post_id
-      f.submit value: "unfavorite"
-     end
-   end
+     link_to "favorite",   favorite_post_path(@post, type: "favorite"), method: :put
+     link_to "unfavorite", favorite_post_path(@post, type: "unfavorite"), method: :put
+     #favorite = button_to("Favorite", url_for([:create_favorite, post.id, current_user.id]), class: "favorite-btn btn btn-default")
  end
 end

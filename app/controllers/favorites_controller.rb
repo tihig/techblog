@@ -25,13 +25,13 @@ class FavoritesController < ApplicationController
   # POST /favorites
   # POST /favorites.json
   def create
-    @favorite = Favorite.new(favorite_params)
+    @favorite = Favorite.new(post_id: @post.id, user_id: current_user.id)
     user = current_user
  
      if not current_user.in? favorite.users and @favorite.save
       current_user.favorites << @favorite
       @favorite.save
-      redirect_to @favorite.user, notice: "#{@favorite.post_id.title} successfully added to favorites!"
+      redirect_to @favorite.post, notice: "#{@favorite.post_id.title} successfully added to favorites!"
      else
       @favorites = Favorites.all
       render :new

@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @favorite = Favorite.new
+    @favorites = Favorite.all
   end
 
   # GET /posts/new
@@ -63,6 +64,7 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

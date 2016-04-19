@@ -10,6 +10,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @favorite = Favorite.new
+    @favorites = Favorite.all
   end
 
   # GET /posts/new
@@ -60,6 +62,22 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def favorite
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorites << @post
+      redirect_to :back, notice: 'You favorited #{@post.name}'
+
+    elsif type == "unfavorite"
+      current_user.favorites.delete(@post)
+      redirect_to :back, notice: 'Unfavorited #{@post.name}'
+
+    else
+      # Type missing, nothing happens
+      redirect_to :back, notice: 'Nothing happened.'
     end
   end
 
