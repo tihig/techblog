@@ -10,8 +10,14 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @favorite = Favorite.new
-    @favorites = Favorite.all
+    if current_user and current_user.in? @post.favorited_by
+      @favorite = @post.favorites.find{ |f| f.user = current_user.}
+    else
+      @favorite = Favorite.new
+      @favorite.post = @post
+    end
+
+
   end
 
   # GET /posts/new
@@ -65,21 +71,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def favorite
-    type = params[:type]
-    if type == "favorite"
-      current_user.favorites << @post
-      redirect_to :back, notice: 'You favorited #{@post.name}'
-
-    elsif type == "unfavorite"
-      current_user.favorites.delete(@post)
-      redirect_to :back, notice: 'Unfavorited #{@post.name}'
-
-    else
-      # Type missing, nothing happens
-      redirect_to :back, notice: 'Nothing happened.'
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

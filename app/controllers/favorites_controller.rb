@@ -25,13 +25,14 @@ class FavoritesController < ApplicationController
   # POST /favorites
   # POST /favorites.json
   def create
-    @favorite = Favorite.new(post_id: @post.id, user_id: current_user.id)
-    user = current_user
- 
-     if not current_user.in? favorite.users and @favorite.save
+         
+    @favorite = Favorite.new(favorite_params)
+    post = Post.find favorite_params[:post_id]
+    byebug
+     if not current_user.in? post.favorited_by and @favorite.save
       current_user.favorites << @favorite
       @favorite.save
-      redirect_to @favorite.post, notice: "#{@favorite.post_id.title} successfully added to favorites!"
+      redirect_to @favorite.post, notice: "#{@favorite.post.title} successfully added to favorites!"
      else
       @favorites = Favorites.all
       render :new
@@ -55,9 +56,10 @@ class FavoritesController < ApplicationController
   # DELETE /favorites/1
   # DELETE /favorites/1.json
   def destroy
+    @post = @favorite.post
     @favorite.destroy
     respond_to do |format|
-      format.html { redirect_to favorites_url, notice: 'Favorite was successfully destroyed.' }
+      format.html { redirect_to @post, notice: 'Favorite was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

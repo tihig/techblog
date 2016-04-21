@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :tagships
   resources :tags
-  resources :posts do
-   put :favorite, on: :member
-  end
+  resources :posts
   resources :categories
   resource :session, only: [:new, :create, :destroy]
  

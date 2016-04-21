@@ -19,11 +19,19 @@
 <div class="btn-toolbar" role="toolbar" aria-label="...">
   <div class="btn-group" role="group" aria-label="...">
    <% if current_user %>
-<!-- favorites_path(@post), method: :post  favorites_path(@post), method: :delete  -->
-    <%= link_to "favorite", # , class:"btn btn-default" %>
-    <% if current_user.in? @post.favorited_by %>
-     <%= link_to "unfavorite", #, class:"btn btn-default" %>
+  <% if current_user.in? @post.favorited_by %>
+      <%= form_for(@favorite, method: "delete") do |f| %>
+        <%= f.hidden_field :post_id %>
+        <%= f.submit value: "unfavorite" , class:"btn btn-default"%>
+      <% end %>
     <% end %>
+  <% if not current_user.in? @post.favorited_by %>
+    <%= form_for(@favorite) do |f| %>
+      <%= f.hidden_field :post_id %>
+      <%= f.submit value:"Favorite submit" , class:"btn btn-default" %>
+    <% end %>
+   <% end %>
+  
   <% end %>
     <%= edit_and_destroy_buttons(@post) %>
   </div>

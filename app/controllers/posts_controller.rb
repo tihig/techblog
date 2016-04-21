@@ -10,8 +10,14 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @favorite = Favorite.new
-    @favorites = Favorite.all
+    if current_user and current_user.in? @post.favorited_by
+      @favorite = @post.favorites.find{ |f| f.user = current_user}
+    else
+      @favorite = Favorite.new
+      @favorite.post = @post
+    end
+
+
   end
 
   # GET /posts/new

@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
                           message: "has to contain one number and one upper case letter"}
 
   has_many :favorites
-  has_many :favorites, through: :favorites, source: :post
+  has_many :favs, through: :favorites, source: :post
 
   has_secure_password
 end
