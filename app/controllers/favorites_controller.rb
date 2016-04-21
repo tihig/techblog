@@ -28,7 +28,6 @@ class FavoritesController < ApplicationController
          
     @favorite = Favorite.new(favorite_params)
     post = Post.find favorite_params[:post_id]
-    byebug
      if not current_user.in? post.favorited_by and @favorite.save
       current_user.favorites << @favorite
       @favorite.save

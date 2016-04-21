@@ -22,13 +22,13 @@
   <% if current_user.in? @post.favorited_by %>
       <%= form_for(@favorite, method: "delete") do |f| %>
         <%= f.hidden_field :post_id %>
-        <%= f.submit value: "unfavorite" , class:"btn btn-default"%>
+        <%= f.submit value: "Unfavorite" , class:"btn btn-default"%>
       <% end %>
     <% end %>
   <% if not current_user.in? @post.favorited_by %>
     <%= form_for(@favorite) do |f| %>
       <%= f.hidden_field :post_id %>
-      <%= f.submit value:"Favorite submit" , class:"btn btn-default" %>
+      <%= f.submit value:"Favorite" , class:"btn btn-default" %>
     <% end %>
    <% end %>
   

@@ -25,6 +25,7 @@
         <%= f.submit value: "Unfavorite" , class:"btn btn-default"%>
       <% end %>
     <% end %>
+
   <% if not current_user.in? @post.favorited_by %>
     <%= form_for(@favorite) do |f| %>
       <%= f.hidden_field :post_id %>

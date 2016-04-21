@@ -56,9 +56,10 @@ class FavoritesController < ApplicationController
   # DELETE /favorites/1
   # DELETE /favorites/1.json
   def destroy
+    @post = @favorite.post
     @favorite.destroy
     respond_to do |format|
-      format.html { redirect_to , notice: 'Favorite was successfully destroyed.' }
+      format.html { redirect_to @post, notice: 'Favorite was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
