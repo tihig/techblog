@@ -1,39 +1,54 @@
-<p id="notice"><%= notice %></p>
 
 <h1>
   <%= @post.title %>
+<small> <%= @post.category.name %></small>
 </h1>
-
-
-
 <p>
-  <%= @post.category.name %>
+  <em> Written by: <%= @post.user.username %> </em>
+</p>
+
+
+<div class="button-group">
+   <% @post.tags.each do |tag| %>
+  <%= link_to tag.name, tag, class:"btn btn-info" %>
+    <% end %>
+</div>
+
+
+
+
+
+<hr class="featurette-divider">
+
+<p class="lead">
+  <%= @post.intro %>
 </p>
 
 <p>
   <%= @post.body %>
 </p>
 
+    <%= edit_and_destroy_buttons(@post) %>
 
 
-<div class="btn-toolbar" role="toolbar" aria-label="...">
-  <div class="btn-group" role="group" aria-label="...">
+<div class="col-md-2">
    <% if current_user %>
   <% if current_user.in? @post.favorited_by %>
       <%= form_for(@favorite, method: "delete") do |f| %>
         <%= f.hidden_field :post_id %>
-        <%= f.submit value: "Unfavorite" , class:"btn btn-default"%>
+        <%= f.submit value: "Unfavorite",  class:"btn btn-default"%>
       <% end %>
     <% end %>
+
 
   <% if not current_user.in? @post.favorited_by %>
     <%= form_for(@favorite) do |f| %>
       <%= f.hidden_field :post_id %>
-      <%= f.submit value:"Favorite" , class:"btn btn-default" %>
+        <%= f.submit value:"Favorite" , class:"btn btn-default" %>
     <% end %>
    <% end %>
-  
-  <% end %>
-    <%= edit_and_destroy_buttons(@post) %>
-  </div>
+<% end %>
+
 </div>
+
+

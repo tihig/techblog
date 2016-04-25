@@ -1,0 +1,4 @@
+class AddIntroToPost < ActiveRecord::Migration
+  def change
+  end
+end

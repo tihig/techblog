@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @posts = Post.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /posts/1
@@ -16,7 +17,7 @@ class PostsController < ApplicationController
       @favorite = Favorite.new
       @favorite.post = @post
     end
-
+  
 
   end
 
@@ -24,11 +25,13 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @categories = Category.all
+    @user = current_user
   end
 
   # GET /posts/1/edit
   def edit
     @categories = Category.all
+    @user = current_user
   end
 
   # POST /posts
@@ -80,6 +83,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :intro, :user_id)
     end
 end

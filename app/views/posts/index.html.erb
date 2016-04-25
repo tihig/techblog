@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <div class="blog-header">
   <h1 class="blog-title">The TechBlog</h1>
@@ -15,10 +14,18 @@
      <div class="blog-post">
       <h2><%= link_to post.title, post %></h2>
       <p class="blog-post-meta"><%= post.category.name %></p>
-      <p><%= post.body %></p>
+      <p><%= post.intro %></p>
      </div>
     <% end %>
 
+
+<nav>
+  <ul class="pager">
+     <%= will_paginate @posts %>
+  </ul>
+</nav>
+
 </div>
+
 
 

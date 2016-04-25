@@ -1,11 +1,14 @@
-c1 = Category.create name:"Programming", description:"All posts related to programming"
-c2 = Category.create name:"Products", description:"All posts related to new products"
-c3 = Category.create name:"Trends", description:"All posts including the latest trends"
 
-Post.create title:"Red hot Ruby!", body:"Eeveryone should start programming with Ruby! This magnificent programming language is fluent and easy to learn." 
-Post.create title:"Java 8, is it Java anymore?", body:"Everyone can agree that Java 8 has brought some new and long waited updates to our beloved programming language. The new improvements have made Java look more like a functional language than before. The question rises: is it Java anymore?"
-Post.create title:"Seeking a new smartphone from the jungle of products? No worries!", body:"There are multiple choises of smartphones on the market these days, but choosing the right one for you might be difficult, if you have no idea what the differences are (besides the color or screen size). Here are some tips for choosing one!"
-Post.create title:"Smartgoggles- are they here for good?", body:"Here on Techblog we are looking into the latest new gadget on the market: smartgoggles. "
+Post.create title:"Lorem ipsum", user_id: 1, intro: "Lorem ipsum dolor sit amet, ut dicat volumus appellantur vis, placerat deterruisset mea ad. Aliquam dissentiunt necessitatibus eum ex, lorem constituto ea mea, ne qui nemore copiosae convenire. Cu eam soleat bonorum. Ea eos labore antiopam, ea odio dictas legimus vis, his no error tation. Iisque aliquando has ne.", body:"Zril dolorem recteque sea te. Eu mei summo ubique, odio perfecto et usu. Et sea aliquid maluisset, amet probo cum et. Mea populo postea eu, utinam munere insolens cu his. In quando lucilius per, cu per congue timeam regione, sit iudico propriae voluptaria cu. Eam illum harum laoreet ad, ex dolore utamur hendrerit vix.
 
-Tag.create name:"New"
-Tag.create name:"Oldschool"
+At veritus contentiones mel. Cetero legimus mei cu, id iisque suavitate consulatu vis. Causae neglegentur eos in, eu sit recusabo perpetua. No mei quando discere.
+
+Dicam congue expetenda ius id, mea ne fugit suscipit copiosae. Maluisset expetendis in sit, augue iriure phaedrum an vel. Habeo tempor quo te. Assum malorum praesent in eam, dolorem intellegam mei ei. Duo cu movet scaevola, discere suscipit periculis id quo, ad facilisis aliquando vix. No nec vocent quaestio, id mel purto liber elaboraret.
+" 
+Post.create title:"Java 8, is it Java anymore?",  user_id: 1, intro: "Lorem ipsum dolor sit amet, ut dicat volumus appellantur vis, placerat deterruisset mea ad. Aliquam dissentiunt necessitatibus eum ex, lorem constituto ea mea, ne qui nemore copiosae convenire. Cu eam soleat bonorum. Ea eos labore antiopam, ea odio dictas legimus vis, his no error tation. Iisque aliquando has ne.", body:"Lorem ipsum dolor sit amet, eu quod debet veritus usu, ex nulla timeam per. Vel cu diam audiam, ferri porro virtute in mel. Ne inani delicatissimi nec, eam accusamus gubergren inciderint te, nam eu labore suavitate. Usu ferri aeque forensibus ea. Sint stet no qui, vel eu blandit expetenda consectetuer, ferri magna vituperatoribus has an. In eum vivendo patrioque voluptaria, te mazim reformidans eum.
+
+Rebum menandri definitiones eum ex, eos eu blandit nominati, erat sententiae cu eam. Ferri decore vivendo est ex, cum ei tale reformidans, suavitate tincidunt mei id. Ei cibo libris eum. Sit novum tempor an. Affert convenire scribentur in per.
+
+Eu summo timeam apeirian pro. Labore repudiare at nec, has eu nostro ponderum. Vix an utinam fastidii, at convenire necessitatibus vis. Eum ad nobis intellegat, in mei meis liber instructior, quaeque commune salutandi mea at. Noster omnium laboramus ea his. Commune efficiantur in vel, vim partiendo mediocritatem cu. An scripta tamquam vel."
+
+

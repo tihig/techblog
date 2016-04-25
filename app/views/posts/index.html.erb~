@@ -5,7 +5,7 @@
    <p class="lead blog-description">Posts about technology and it-related news, trends etc.</p>
 </div>
 
-<% if current_user.admin and not current_user.nil %>
+<% if current_user and current_user.admin %>
   <%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
 <% end %>
 
@@ -15,10 +15,18 @@
      <div class="blog-post">
       <h2><%= link_to post.title, post %></h2>
       <p class="blog-post-meta"><%= post.category.name %></p>
-      <p><%= post.body %></p>
+      <p><%= post.intro %></p>
      </div>
     <% end %>
 
+
+<nav>
+  <ul class="pager">
+     <%= will_paginate @posts %>
+  </ul>
+</nav>
+
 </div>
+
 
 

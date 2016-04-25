@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
                           with: /\d.*[A-Z]|[A-Z].*\d/,
                           message: "has to contain one number and one upper case letter"}
 
+  has_many :posts
   has_many :favorites
   has_many :favs, through: :favorites, source: :post
 
