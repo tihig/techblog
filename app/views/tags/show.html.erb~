@@ -3,7 +3,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading"> <%= @tag.name %></div>
-  <!-- ul-listgroup here -->
+  <!-- ul-listgroup of posts here -->
 </div>
 
 <%= edit_and_destroy_buttons(@tag) %>

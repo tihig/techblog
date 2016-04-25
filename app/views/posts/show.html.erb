@@ -1,37 +1,37 @@
+<div class="row">
+ <div class="col-md-2">
+          
+ </div>
+ <div class="col-md-6">
+  <h1>
+    <%= @post.title %>
+    <small> <%= @post.category.name %></small>
+  </h1>
+  <p>
+   <em> Written by: <%= @post.user.username %> </em>
+  </p>
 
-<h1>
-  <%= @post.title %>
-<small> <%= @post.category.name %></small>
-</h1>
-<p>
-  <em> Written by: <%= @post.user.username %> </em>
-</p>
 
-
-<div class="button-group">
-   <% @post.tags.each do |tag| %>
-  <%= link_to tag.name, tag, class:"btn btn-info" %>
+  <div class="button-group">
+    <% @post.tags.each do |tag| %>
+    <%= link_to tag.name, tag, class:"btn btn-info" %>
     <% end %>
-</div>
+  </div>
 
+  <hr class="featurette-divider">
 
+  <p class="lead">
+   <%= @post.intro %>
+  </p>
 
+  <p>
+   <%= @post.body %>
+  </p>
 
+  <%= edit_and_destroy_buttons(@post) %>
+ </div>
 
-<hr class="featurette-divider">
-
-<p class="lead">
-  <%= @post.intro %>
-</p>
-
-<p>
-  <%= @post.body %>
-</p>
-
-    <%= edit_and_destroy_buttons(@post) %>
-
-
-<div class="col-md-2">
+ <div class="col-md-2">
    <% if current_user %>
   <% if current_user.in? @post.favorited_by %>
       <%= form_for(@favorite, method: "delete") do |f| %>
@@ -47,8 +47,9 @@
         <%= f.submit value:"Favorite" , class:"btn btn-default" %>
     <% end %>
    <% end %>
-<% end %>
+  <% end %>
 
+ </div>
 </div>
 
 

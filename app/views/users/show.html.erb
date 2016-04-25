@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<div class="panel panel-default">
-  <div class="panel-heading"> <%= @user.username %></div>
-</div>
+<div class="row">
+ <div class="col-md-2">
+          
+ </div>
+ <div class="col-md-6">
+<h2><%= @user.username %> </h2>
 
 <!-- admin: status and what has he/she written -->
 
@@ -23,5 +24,29 @@
   </tbody>
 </table>
 
+<% if @user.admin? %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Written posts</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.posts.each do |written| %>
+      <tr>
+        <td><%= link_to written.title, written %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>
+
 <%= edit_and_destroy_buttons(@user) %>
-<%= link_to 'Back', users_path %>
+
+
+</div>
+</div>

@@ -1,15 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+ <div class="col-md-2">
+          
+ </div>
+ <div class="col-md-6">
+   <div class="blog-header">
+     <h1 class="blog-title">The TechBlog</h1>
+     <p class="lead blog-description">Posts about technology and it-related news, trends etc.</p>
+   </div>
 
-<div class="blog-header">
-  <h1 class="blog-title">The TechBlog</h1>
-   <p class="lead blog-description">Posts about technology and it-related news, trends etc.</p>
-</div>
 
-<% if current_user and current_user.admin %>
-  <%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
-<% end %>
-
-<div class="col-sm-8 blog-main">
 
     <% @posts.each do |post| %>
      <div class="blog-post">
@@ -20,12 +19,20 @@
     <% end %>
 
 
-<nav>
+
   <ul class="pager">
      <%= will_paginate @posts %>
   </ul>
-</nav>
 
+
+ <div class="col-md-2">
+           <% if current_user and current_user.admin %>
+    <%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
+   <% end %>  
+
+ </div>
+
+ </div>
 </div>
 
 

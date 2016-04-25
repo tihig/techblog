@@ -22,5 +22,5 @@
 <br>
 
 <% if current_user and current_user.admin %>
- <%= link_to 'New Tag', new_tag_path, class="btn btn-default" %>
+ <%= link_to 'New Tag', new_tag_path, class:"btn btn-default" %>
 <% end %>

@@ -10,6 +10,8 @@ $navbar-default-color: $light-orange;
     padding: 40px 0;
     text-align: center;
 }
-
+.field{
+  min-width: 2000px;
+}
 
 @import "bootstrap";
