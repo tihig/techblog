@@ -8,7 +8,8 @@
     <small> <%= @post.category.name %></small>
   </h1>
   <p>
-   <em> Written by: <%= @post.user.username %> </em>
+   <em> Written by: <%= @post.user.username %> ,	
+   Created at: <%= @post.created_at.strftime("%b %d, %Y") %></em>
   </p>
 
 
@@ -18,11 +19,22 @@
     <% end %>
   </div>
 
+ <% if current_user.admin? %>
+    <%= form_for(@tag) do |t| %>
+      <%= t.label :name %><br>
+      <%= t.text_field :name , placeholder:"Trendy" %>
+      <%= t.hidden_field :post_id %>
+       <%= t.submit value:"Tag post" , class:"btn btn-default" %>
+  <% end %>
+ <% end %>
+
   <hr class="featurette-divider">
 
   <p class="lead">
    <%= @post.intro %>
   </p>
+
+ <hr class="featurette-divider">
 
   <p>
    <%= @post.body %>
@@ -36,7 +48,7 @@
   <% if current_user.in? @post.favorited_by %>
       <%= form_for(@favorite, method: "delete") do |f| %>
         <%= f.hidden_field :post_id %>
-        <%= f.submit value: "Unfavorite",  class:"btn btn-default"%>
+        <%= f.submit value: "Unfavorite",  class:"btn btn-warning"%>
       <% end %>
     <% end %>
 
@@ -44,8 +56,8 @@
   <% if not current_user.in? @post.favorited_by %>
     <%= form_for(@favorite) do |f| %>
       <%= f.hidden_field :post_id %>
-        <%= f.submit value:"Favorite" , class:"btn btn-default" %>
-    <% end %>
+        <%= f.submit value:"Favorite" , class:"btn btn-warning" %>
+   <% end %>
    <% end %>
   <% end %>
 

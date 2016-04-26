@@ -1,6 +1,6 @@
 <div class="row">
  <div class="col-md-2">
-          
+          <h5> trololoo </h5>
  </div>
  <div class="col-md-6">
    <div class="blog-header">
@@ -16,7 +16,7 @@
     <% @posts.each do |post| %>
      <div class="blog-post">
       <h2><%= link_to post.title, post %></h2>
-      <p class="blog-post-meta"><%= post.category.name %></p>
+      <p class="blog-post-meta"><em><%= post.category.name %></em></p>
       <p><%= post.intro %></p>
      </div>
     <% end %>
@@ -28,10 +28,14 @@
   </ul>
 
 
- <div class="col-md-2">
+
 
  </div>
-
+ <div class="col-md-2">
+   <button class="btn btn-primary" type="button">
+     March <span class="badge">4</span>
+   </button>
+   
  </div>
 </div>
 

@@ -17,7 +17,12 @@ class PostsController < ApplicationController
       @favorite = Favorite.new
       @favorite.post = @post
     end
-  
+
+    if current_user.admin 
+      @tags = Tag.all.select{ |t| not @post.id.in? t.posts}
+      @tag = Tagship.new
+      @tag.post = @post
+    end
 
   end
 
@@ -25,11 +30,13 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @categories = Category.all
+    @user = current_user
   end
 
   # GET /posts/1/edit
   def edit
     @categories = Category.all
+    @user = current_user
   end
 
   # POST /posts

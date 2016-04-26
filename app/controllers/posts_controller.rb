@@ -17,7 +17,11 @@ class PostsController < ApplicationController
       @favorite = Favorite.new
       @favorite.post = @post
     end
-  
+
+    if current_user.admin 
+      @tag = Tag.new
+      @tag.post = @post
+    end
 
   end
 

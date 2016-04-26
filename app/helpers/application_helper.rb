@@ -21,8 +21,8 @@ module ApplicationHelper
    end
   end
 
- def favorite_button(post)
-
-     #favorite = button_to("Favorite", url_for([:create_favorite, post.id, current_user.id]), class: "favorite-btn btn btn-default")
+ def count_month(nr)
+   posts = Post.all.select{ |p| p.created_at.month = 3 }
+   posts.count
  end
 end

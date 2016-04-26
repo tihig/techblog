@@ -28,7 +28,7 @@ class TagshipsController < ApplicationController
 
     respond_to do |format|
       if @tagship.save
-        format.html { redirect_to @tagship, notice: 'Tagship was successfully created.' }
+        format.html { redirect_to @tagship.post, notice: 'Tagship was successfully created.' }
         format.json { render :show, status: :created, location: @tagship }
       else
         format.html { render :new }
