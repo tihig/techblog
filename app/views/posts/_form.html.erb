@@ -1,6 +1,6 @@
 
 
-<form>
+
  <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -41,8 +41,8 @@
 
 
   <div class="actions">
-    <%= f.submit 'Submit', class:"btn btn-primary" %> 
+    <%= f.submit %> 
   </div>
  <% end %>
- </form>
+
 

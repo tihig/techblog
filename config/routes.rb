@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :favorites
   resources :users
-  resources :tagships
   resources :tags
   resources :posts
   resources :categories

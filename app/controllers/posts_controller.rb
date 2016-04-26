@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @categories = Category.all
-    @user = current_user
+    @post.user = current_user
   end
 
   # GET /posts/1/edit
@@ -87,6 +87,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :intro, :user_id)
+      params.require(:post).permit(:title, :body, :intro, :category_id, :user_id)
     end
 end

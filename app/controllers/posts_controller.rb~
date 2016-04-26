@@ -19,8 +19,7 @@ class PostsController < ApplicationController
     end
 
     if current_user.admin 
-      @tags = Tag.all.select{ |t| not @post.id.in? t.posts}
-      @tag = Tagship.new
+      @tag = Tag.new
       @tag.post = @post
     end
 
@@ -88,6 +87,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :intro, :user_id)
+      params.require(:post).permit(:title, :body, :intro, :category_id, :user_id)
     end
 end
