@@ -18,7 +18,6 @@
     <%= f.label :title %><br>
     <%= f.text_field :title , placeholder:"Programming" %>
   </div>
-<% byebug %>
 
   <div class="field">
    <%= f.hidden_field :user_id %>

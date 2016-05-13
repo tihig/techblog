@@ -5,6 +5,13 @@ FactoryGirl.define do
     password_confirmation "Esimerkki1"
   end
 
+  factory :admin, class: User do
+    username "Pekka"
+    password "Sisilisko2"
+    password_confirmation "Sisilisko2"
+    admin true
+  end
+
   factory :post do
     title "Testing spec"
     intro "Testing does this spec work."
