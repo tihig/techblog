@@ -1,1 +1,29 @@
 # techblog
+
+Page:
+https://agile-basin-19268.herokuapp.com/
+
+Wadror- projektityö 2016
+
+##Mikä?
+
+Ruby on railsilla kehitetty blogipohja teknologia-aiheita (tai muita aiheita) käsittelevälle blogille.
+
+##Käyttötarkoitus
+
+Blogin kävijä voi omilla tunnuksillaan käydä blogikirjoitusten lukemisen lisäksi käydä selaamassa eri kategorioita ja mitä blogikirjoituksia niihin kuuluu sekä tageja. Kävijä voi myös lisätä blogikirjoituksia omiin suosikkeihinsa. 
+
+Blogikirjoittaja eli admin pääsee omilla tunnuksillaan kirjoittamaan uusia blogikirjoituksia ja hallinnoimaan niitä (editointi, poisto, tagin lisäys).
+
+##Käyttöohje
+
+Luo tunnukset oikeasta yläkulmasta signup- valikosta. 
+Jos sinulla on jo tunnukset, kirjaudu sisään signin-valikosta. Ensimmäisenä avautuu oma profiilisivu, jossa listataan kaikki suosikkikirjoitukset ja kirjoitetut sivut (vain admin). 
+Home-napista pääsee blogikirjoitukset listaavalle sivulle. Kirjoitus aukeaa suurempana nimeä klikkaamalla. Kun blogikirjoituksen sivu on auki, näet myös blogin kategorian lisäksi sen kirjoittajan, milloin se on kirjoitettu ja kaikki tähän kirjoitukseen liittyvät tagit. Oikealta ylhäältä keltaisesta napista voi lisätä kirjoituksen omiin suosikkeihin tai poistaa suosikeista.
+Jos olet admin, voit tagi-listauksien vierestä lisätä lisää tageja kirjoitukselle. Alhaalta löytyvät muokkaus- (edit) ja poisto- (destroy) napit.
+Uuden blogikirjoituksen saa kirjoitettua home- sivustolta blogin otsikon alta. Otsikko ja kategoria ovat pakolliset tiedot, intro on pieni esittelyteksti kirjoituksen alkuun ja body varsinainen kirjoitus. Kuvia kirjoitukseen ei voi lisätä. 
+Categories-valikko listaa kaikki kategoriat. Klikkaamalla kategorian nimeä avautuu kategorian tarkempi kuvaus ja listaus kaikista kirjoituksista, jotka siihen kuuluvat. 
+Tags- valikko listaa kaikki tagit. 
+
+
+

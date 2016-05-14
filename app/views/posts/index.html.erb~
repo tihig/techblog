@@ -33,11 +33,8 @@
  </div>
  <div class="col-md-2">
    <button class="btn btn-primary" type="button">
-     March <span class="badge"></span>
+     March <span class="badge">4</span>
    </button>
-  <h4> Month </h4>
-   <h5> March </5>
-   <h5> April </5>
    
  </div>
 </div>
