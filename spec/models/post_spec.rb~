@@ -32,8 +32,8 @@ RSpec.describe Post, type: :model do
 
  it "is not saved without user" do
     category1 = FactoryGirl.create :category
-    post = Post.create title: "Testing spec", intro: "Testing does this spec work.", 
-    user_id: user1.id, body: "This is the body of the test spec."
+    post = Post.create title: "Testing spec", intro: "Testing does this spec work.", category_id: category1.id,
+    body: "This is the body of the test spec."
 
     expect(post).not_to be_valid
   end

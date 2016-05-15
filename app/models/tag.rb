@@ -3,13 +3,5 @@ class Tag < ActiveRecord::Base
 
  validates :name, presence: true
 
-def self.search(search)
-  byebug
-  if search
-    find(:all, :conditions => ["name LIKE '%?%'", search[:name]])
-  else
-    Tag.all
-  end
-end
 
 end

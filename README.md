@@ -1,6 +1,6 @@
 # techblog
 
-Page:
+Sivun url:
 https://agile-basin-19268.herokuapp.com/
 
 Wadror- projektityö 2016
@@ -18,18 +18,18 @@ Blogikirjoittaja eli admin pääsee omilla tunnuksillaan kirjoittamaan uusia blo
 ##Käyttöohje
 
 Luo tunnukset oikeasta yläkulmasta signup- valikosta. 
-Jos sinulla on jo tunnukset, kirjaudu sisään signin-valikosta. Ensimmäisenä avautuu oma profiilisivu, jossa listataan kaikki suosikkikirjoitukset ja kirjoitetut sivut (vain admin). 
+Jos sinulla on jo tunnukset, kirjaudu sisään signin-valikosta. Ensimmäisenä avautuu oma profiilisivu, jossa listataan kaikki suosikkikirjoitukset ja kirjoitetut sivut (vain admin). Voit myös poistaa(destroy) ja muokata(edit) omia tietoja tällä sivulla. 
 Home-napista pääsee blogikirjoitukset listaavalle sivulle. Kirjoitus aukeaa suurempana nimeä klikkaamalla. Kun blogikirjoituksen sivu on auki, näet myös blogin kategorian lisäksi sen kirjoittajan, milloin se on kirjoitettu ja kaikki tähän kirjoitukseen liittyvät tagit. Oikealta ylhäältä keltaisesta napista voi lisätä kirjoituksen omiin suosikkeihin tai poistaa suosikeista.
-Jos olet admin, voit tagi-listauksien vierestä lisätä lisää tageja kirjoitukselle. Alhaalta löytyvät muokkaus- (edit) ja poisto- (destroy) napit.
+Jos olet admin, voit tagi-listauksien vierestä lisätä lisää tageja kirjoitukselle. Klikkaamalla tagin nimeä pääsee listaukseen, joka listaa kaikki siltä tagilta löytyvät blogi-kirjoitukset. Alhaalta löytyvät muokkaus- ja poisto- napit.
 Uuden blogikirjoituksen saa kirjoitettua home- sivustolta blogin otsikon alta. Otsikko ja kategoria ovat pakolliset tiedot, intro on pieni esittelyteksti kirjoituksen alkuun ja body varsinainen kirjoitus. Kuvia kirjoitukseen ei voi lisätä. 
 Categories-valikko listaa kaikki kategoriat. Klikkaamalla kategorian nimeä avautuu kategorian tarkempi kuvaus ja listaus kaikista kirjoituksista, jotka siihen kuuluvat. 
-Tags- valikko listaa kaikki tagit. 
+
 
 
 
 ##Lisää
 
-Lisää dokumentaatio löytyy docs- kansiosta.
+Lisää dokumentaatioita löytyy docs- kansiosta.
 
 
 

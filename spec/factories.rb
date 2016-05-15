@@ -1,12 +1,25 @@
 FactoryGirl.define do
   factory :user do
-    username "Seppo"
+    username "Martti"
+    password "Esimerkki1"
+    password_confirmation "Esimerkki1"
+  end
+
+  factory :user1, class: User do
+    username "Anna"
     password "Esimerkki1"
     password_confirmation "Esimerkki1"
   end
 
   factory :admin, class: User do
     username "Pekka"
+    password "Sisilisko2"
+    password_confirmation "Sisilisko2"
+    admin true
+  end
+
+  factory :admin2, class: User do
+    username "Jaana"
     password "Sisilisko2"
     password_confirmation "Sisilisko2"
     admin true

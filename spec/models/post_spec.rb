@@ -4,7 +4,7 @@ RSpec.describe Post, type: :model do
 
  it "has a correct attributes and is saved" do
     category1 = FactoryGirl.create :category
-    user1 = FactoryGirl.create :user
+    user1 = FactoryGirl.create :user, username: "Esko"
     post = Post.create title: "Testing spec", intro: "Testing does this spec work.", category_id: category1.id, 
     user_id: user1.id, body: "This is the body of the test spec."
 
@@ -15,7 +15,7 @@ RSpec.describe Post, type: :model do
 
  it "is not saved without title" do
     category1 = FactoryGirl.create :category
-    user1 = FactoryGirl.create :user
+    user1 = FactoryGirl.create :user, username: "Esko"
     post = Post.create intro: "Testing does this spec work.", category_id: category1.id,
     user_id: user1.id, body: "This is the body of the test spec."
 
@@ -23,7 +23,7 @@ RSpec.describe Post, type: :model do
   end
 
  it "is not saved without category" do
-    user1 = FactoryGirl.create :user
+    user1 = FactoryGirl.create :user, username: "Esko"
     post = Post.create title: "Testing spec", intro: "Testing does this spec work.", 
     user_id: user1.id, body: "This is the body of the test spec."
 
