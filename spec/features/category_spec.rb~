@@ -12,7 +12,8 @@ describe "Category" do
   describe "if a user is logged in" do
     
     before :each do
-      sign_in(username:"Seppo", password:"Esimerkki1")
+      FactoryGirl.create :user
+      sign_in(username:"Martti", password:"Esimerkki1")
       visit categories_path
     end
 
@@ -54,6 +55,15 @@ describe "Category" do
 
       expect(page).to have_content "Capybara"
 
+  end
+  it "can be deleted" do
+      category = FactoryGirl.create :category
+      visit posts_path
+      click_link "To be deleted"
+      
+      expect{
+        click_link "Destroy"
+      }.to change{Post.count}
   end
  
  end

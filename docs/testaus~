@@ -1,9 +1,16 @@
 Testaus
+------------------
 
 Rspecillä (+Capybara, Factorygirl yms.) on testattu pääasiassa luontitoimintoja kirjautumiselle, blogikirjoituksille (post), kategorioille (category) ja tageille (tag). 
 
-Testikattavuus Simplecovilla on 68,16%.
+Testikattavuus Simplecovilla on 80,65%.
 
+Pienten bugien korjaamisen apuna käytin byebug:ia. 
 
+Vapaamuotoisella läpikäynnillä on varmistettu linkkien ja nappien näkyvyys ja herokun toimivuus.
 
-Vapaamuotoisella läpikäynnillä on varmistettu linkkien ja nappien näkyvyys ja herokun 
+Testitunnukset
+-------------------
+
+Tavallinen käyttäjä: Matti, Matti123
+Laajemmat oikeudet omaava: user, Salainen1

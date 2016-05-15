@@ -7,6 +7,7 @@ describe "Post" do
     admin = FactoryGirl.create :admin
     category = FactoryGirl.create :category
     FactoryGirl.create :post, category_id: category.id, user_id: admin.id
+    
   end
 
   describe "if a user logged in" do
@@ -25,6 +26,7 @@ describe "Post" do
   describe "if a admin user logged in" do
     before :each do
       sign_in(username:"Pekka", password:"Sisilisko2")
+      
     end
 
   it "is listed in the front page" do
@@ -51,6 +53,18 @@ describe "Post" do
         expect{
         click_button "Create Post"
       }.not_to change{Post.count}
+  end
+
+  it "can be deleted" do
+      admin = FactoryGirl.create :admin, username: "Harri"
+      category = FactoryGirl.create :category
+      post2 = FactoryGirl.create :post, title: "To be deleted", user_id: admin.id, category_id: category.id
+      visit posts_path
+      click_link "To be deleted"
+      
+      expect{
+        click_link "Destroy"
+      }.to change{Post.count}
   end
 
  end

@@ -14,7 +14,11 @@
   </ul>
 </div>
 
-<%= edit_and_destroy_buttons(@tag) %>
+<% if current_user and current_user.admin %>
+ <p> Edit and destroy tag (belongs to previous post) </p>
+ <%= edit_and_destroy_buttons(@tag) %>
+
+<% end %>
 </div>
 </div>
 

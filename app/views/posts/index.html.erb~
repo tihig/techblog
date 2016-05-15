@@ -1,6 +1,6 @@
 <div class="row">
  <div class="col-md-2">
-          <h5> trololoo </h5>
+<% session[:user_id] = nil %>
  </div>
  <div class="col-md-6">
    <div class="blog-header">
@@ -32,9 +32,7 @@
 
  </div>
  <div class="col-md-2">
-   <button class="btn btn-primary" type="button">
-     March <span class="badge">4</span>
-   </button>
+
    
  </div>
 </div>

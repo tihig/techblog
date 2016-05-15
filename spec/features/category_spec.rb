@@ -56,6 +56,15 @@ describe "Category" do
       expect(page).to have_content "Capybara"
 
   end
+  it "can be deleted" do
+      category = FactoryGirl.create :category, name: "To be deleted"
+      visit categories_path
+      click_link "To be deleted"
+      
+      expect{
+        click_link "Destroy"
+      }.to change{Category.count}
+  end
  
  end
 end

@@ -3,10 +3,10 @@
           
  </div>
  <div class="col-md-6">
-
+<h1> <%= @tag.name %> </h1>
 
 <div class="panel panel-default">
-  <div class="panel-heading"> <%= @tag.name %></div>
+  <div class="panel-heading">All posts tagged with <em><%= @tag.name %></em> </div>
   <ul class="list-group">
     <% @tags.each do |tag| %>
       <li class="list-group-item"><%= link_to tag.post.title, tag.post %></li>
@@ -14,7 +14,11 @@
   </ul>
 </div>
 
+<% if current_user and current_user.admin %>
+<p> Edit and destroy tag (belongs to previous post) </p>
 <%= edit_and_destroy_buttons(@tag) %>
+
+<% end %>
 </div>
 </div>
 

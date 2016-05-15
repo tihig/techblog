@@ -45,8 +45,10 @@
 
 <% end %>
 
-<%= edit_and_destroy_buttons(@user) %>
-<%= link_to 'Back', users_path %>
+<p> Change profile settings (edit & destroy profile) </p>
+<%= link_to 'Edit', @user, class:"btn btn-primary" %>
+<%= link_to 'Destroy',@user , method: :delete, data: {confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+
 
 </div>
 </div>

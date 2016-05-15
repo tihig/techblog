@@ -16,9 +16,10 @@
   </ul>
 </div>
 
-
-
+<% if current_user and current_user.admin %>
+<p> <strong> WARNING! Deleting a category will delete all posts related to it. </strong></p>
 <%= edit_and_destroy_buttons(@category) %>
+<% end %>
 
 </div>
 </div>

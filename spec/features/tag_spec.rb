@@ -38,6 +38,26 @@ describe "Tag" do
       }.not_to change{Tag.count}
   end
 
+  it "is deleted" do
+        fill_in('tag_name', with:'Trendy')
+        click_button "Tag post"
+        click_link "Trendy"
+        expect{
+        click_link "Destroy"
+      }.to change{Tag.count}
+  end
+
+  it "is edited" do
+        fill_in('tag_name', with:'Trendy')
+        click_button "Tag post"
+        click_link "Trendy"
+
+        click_link "Edit"
+        fill_in('tag_name', with:'Not so trendy')
+        click_button "Submit"
+        expect(page).to have_content "Not so trendy"
+  end
+
  end
 
 

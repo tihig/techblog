@@ -54,6 +54,8 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1
   # DELETE /categories/1.json
   def destroy
+    @posts = Post.all.select{|p| p.category_id = @category.id}
+    @posts.each{ |p| p.destroy }
     @category.destroy
     respond_to do |format|
       format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
@@ -69,6 +71,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name, :descritpion)
+      params.require(:category).permit(:name, :description)
     end
 end
