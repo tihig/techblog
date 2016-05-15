@@ -19,6 +19,7 @@
     <% end %>
   </div>
 
+ <% if  %>
   <% if current_user and current_user.admin? %>
     <%= form_for(@tag) do |t| %>
       <%= t.label :name %><br>
@@ -27,7 +28,7 @@
        <%= t.submit value:"Tag post" , class:"btn btn-default" %>
    <% end %>
   <% end %>
-
+ <% end %>
   <hr class="featurette-divider">
 
   <p class="lead">

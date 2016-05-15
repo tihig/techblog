@@ -18,7 +18,7 @@ class PostsController < ApplicationController
       @favorite.post = @post
     end
 
-    if current_user.admin 
+    if current_user and current_user.admin
       @tag = Tag.new
       @tag.post = @post
     end
