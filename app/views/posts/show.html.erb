@@ -18,8 +18,8 @@
     <%= link_to tag.name, tag, class:"btn btn-info" %>
     <% end %>
   </div>
-
-  <% if current_user and current_user.admin? %>
+ <% if current_user %>
+  <% if current_user.admin? %>
     <%= form_for(@tag) do |t| %>
       <%= t.label :name %><br>
       <%= t.text_field :name , placeholder:"Trendy" %>
@@ -27,7 +27,7 @@
        <%= t.submit value:"Tag post" , class:"btn btn-default" %>
    <% end %>
   <% end %>
-
+ <% end %>
   <hr class="featurette-divider">
 
   <p class="lead">
