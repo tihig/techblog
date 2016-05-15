@@ -18,11 +18,9 @@ class PostsController < ApplicationController
       @favorite.post = @post
     end
 
-    if current_user
-      if current_user.admin
+    if current_user and current_user.admin
       @tag = Tag.new
       @tag.post = @post
-      end
     end
 
   end
@@ -44,7 +42,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    byebug
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
