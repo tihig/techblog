@@ -33,8 +33,7 @@ class FavoritesController < ApplicationController
       @favorite.save
       redirect_to @favorite.post, notice: "#{@favorite.post.title} successfully added to favorites!"
      else
-      @favorites = Favorites.all
-      render :new
+      redirect_to posts_path
     end
   end
 
@@ -71,6 +70,6 @@ class FavoritesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favorite_params
-      params.require(:favorite).permit(:post_id, :user_id)
+      params.require(:favorite).permit(:post_id)
     end
 end
