@@ -1,10 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+ <div class="col-md-2">
+          
+ </div>
+ <div class="col-md-6">
 
 
 <div class="panel panel-default">
   <div class="panel-heading"> <%= @tag.name %></div>
-  <!-- ul-listgroup of posts here -->
+  <ul class="list-group">
+   <li class="list-group-item"><%= link_to @tag.post.title, @tag.post %></li>
+    <% byebug %>
+     <% @tags.each do |tag| %>
+      <li class="list-group-item"><%= link_to tag.post.title, tag.post %></li>
+     <% end %>
+  </ul>
 </div>
 
 <%= edit_and_destroy_buttons(@tag) %>
+</div>
+</div>
+
 

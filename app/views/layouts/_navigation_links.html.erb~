@@ -5,5 +5,4 @@
 <li><%= link_to 'categories', categories_path %></li>
 <li><%= link_to 'tags', tags_path %></li>
 
-
 <% end %>

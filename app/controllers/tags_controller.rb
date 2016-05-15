@@ -10,6 +10,7 @@ class TagsController < ApplicationController
   # GET /tags/1
   # GET /tags/1.json
   def show
+    @tags = Tag.all.select{ |t| t.name.eql? @tag.name}
   end
 
   # GET /tags/new

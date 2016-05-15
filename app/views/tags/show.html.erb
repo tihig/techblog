@@ -7,7 +7,11 @@
 
 <div class="panel panel-default">
   <div class="panel-heading"> <%= @tag.name %></div>
-  <!-- ul-listgroup of posts here -->
+  <ul class="list-group">
+    <% @tags.each do |tag| %>
+      <li class="list-group-item"><%= link_to tag.post.title, tag.post %></li>
+    <% end %>
+  </ul>
 </div>
 
 <%= edit_and_destroy_buttons(@tag) %>

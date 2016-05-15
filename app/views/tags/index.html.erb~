@@ -1,6 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+ <div class="col-md-2">
+          
+ </div>
+ <div class="col-md-6">
 
 <h1>Listing Tags</h1>
+
+
+<%= form_tag("/tags", method: "get") do %>
+  <%= label_tag(:name, "Search for:") %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 
 <table class="table">
   <thead>
@@ -21,6 +33,5 @@
 
 <br>
 
-<% if current_user and current_user.admin %>
- <%= link_to 'New Tag', new_tag_path, class:"btn btn-default" %>
-<% end %>
+</div>
+</div>
